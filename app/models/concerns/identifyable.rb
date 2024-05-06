@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Identify database entity with ulid, username
 module Identifyable
   extend ActiveSupport::Concern
 

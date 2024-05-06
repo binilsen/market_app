@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# User shopping cart
 class Cart < ApplicationRecord
   monetize :total_inr
   has_many :carts_products_users

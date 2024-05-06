@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Category object
 class CategoryPolicy < ApplicationPolicy
   # See https://actionpolicy.evilmartians.io/#/writing_policies
   pre_check :user?

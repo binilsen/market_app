@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# App user
 class User < ApplicationRecord
   TOKEN_HASH = Rails.application.credentials.secret_key_base
 

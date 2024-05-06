@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Product object
 class ProductPolicy < ApplicationPolicy
   pre_check :user?
 

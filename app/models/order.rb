@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Order object
 class Order < ApplicationRecord
   belongs_to :address
   has_many :orders_products
