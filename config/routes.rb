@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/gql' if Rails.env.development?
   mount Shrine.upload_endpoint(:cache) => '/upload'
   # Defines the root path route ("/")
-  # root "posts#index"
+  root 'pages#index'
 end
