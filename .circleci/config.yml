@@ -17,18 +17,18 @@ jobs:
           name: rspec test
           command: bundle exec rspec
   deploy:
-    # This is an example deploy job, not actually used by the workflow
-    docker:
-      - image: cimg/base:stable
     steps:
-      # Replace this with steps to deploy to users
       - run:
           name: deploy
-          command: '#e.g. ./deploy.sh'
+          command: curl https://api.render.com/deploy/srv-coscbe20si5c739t2pp0?key=VGTPHkGdzZ0
 workflows:
   build-and-test:
     jobs:
       - test-ruby
-    # - deploy:
-    #     requires:
-    #       - test-ruby
+      - deploy:
+          filters:
+            branches:
+              only:
+                - fix-deploy
+          requires:
+            - test-ruby
