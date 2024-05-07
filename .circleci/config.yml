@@ -30,7 +30,7 @@ workflows:
       - test-ruby
       - deploy:
           filters:
-            branch:
+            branches:
               only:
                 - fix-deploy
           requires:
