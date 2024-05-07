@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Cart products
 class CartsProductsUser < ApplicationRecord
   belongs_to :products_user
   belongs_to :cart

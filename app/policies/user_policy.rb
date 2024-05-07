@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# User object
 class UserPolicy < ApplicationPolicy
   pre_check :user?
   # See https://actionpolicy.evilmartians.io/#/writing_policies

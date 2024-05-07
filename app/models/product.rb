@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Product object
 class Product < ApplicationRecord
   has_many :products_users, dependent: :destroy
   has_many :users, through: :products_users
