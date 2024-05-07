@@ -17,7 +17,7 @@ jobs:
           name: rspec test
           command: bundle exec rspec
       - store_artifacts:
-          path: coverage/index.html
+          path: coverage
   deploy:
     docker:
       - image: cimg/base:stable
