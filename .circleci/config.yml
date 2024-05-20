@@ -3,6 +3,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@2.0.1
+  codecov: codecov/codecov@4.0.1
 jobs:
   test-ruby:
     # Install gems, run rspec tests
@@ -37,3 +38,7 @@ workflows:
                 - main
           requires:
             - test-ruby
+  ccodecov-ci:
+    jobs:
+      - checkout
+      - codecov/upload
