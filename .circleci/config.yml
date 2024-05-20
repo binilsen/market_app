@@ -17,6 +17,8 @@ jobs:
       - run:
           name: rspec test
           command: bundle exec rspec
+      - store_artifacts:
+          path: coverage
       - codecov/upload
   deploy:
     docker:
