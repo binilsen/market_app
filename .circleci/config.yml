@@ -3,6 +3,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@2.0.1
+  codecov: codecov/codecov@4.1.0
 jobs:
   test-ruby:
     # Install gems, run rspec tests
@@ -16,6 +17,11 @@ jobs:
       - run:
           name: rspec test
           command: bundle exec rspec
+      - codecov/upload:
+          file: /home/circleci/project/coverage/index.html
+          commit_args: --slug binilsen/market_app
+          report_args: --slug binilsen/market_app
+          upload_args: --slug binilsen/market_app
       - store_artifacts:
           path: coverage
   deploy:
