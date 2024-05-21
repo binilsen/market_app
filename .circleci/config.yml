@@ -20,7 +20,7 @@ jobs:
       - store_artifacts:
           path: coverage
       - codecov/upload:
-        file: /home/circleci/project/coverage/index.html
+          file: /home/circleci/project/coverage/index.html
   deploy:
     docker:
       - image: cimg/base:stable
