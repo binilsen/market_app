@@ -18,6 +18,7 @@ jobs:
           name: rspec test
           command: bundle exec rspec
       - codecov/upload:
+          file: /home/circleci/project/coverage/index.html
           commit_args: --slug binilsen/market_app
           report_args: --slug binilsen/market_app
           upload_args: --slug binilsen/market_app
