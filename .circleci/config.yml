@@ -17,16 +17,12 @@ jobs:
       - run:
           name: rspec test
           command: bundle exec rspec
-      - store_artifacts:
-          path: coverage
-  codecov-ci:
-    docker:
-      - image: cimg/base:stable
-    steps:
       - codecov/upload:
           commit_args: --slug binilsen/market_app
           report_args: --slug binilsen/market_app
           upload_args: --slug binilsen/market_app
+      - store_artifacts:
+          path: coverage
   deploy:
     docker:
       - image: cimg/base:stable
@@ -39,9 +35,6 @@ workflows:
   build-and-test:
     jobs:
       - test-ruby
-      - codecov-ci:
-          requires:
-            - test-ruby
       - deploy:
           filters:
             branches:
