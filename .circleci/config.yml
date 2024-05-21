@@ -38,7 +38,7 @@ workflows:
                 - main
           requires:
             - test-ruby
-  codecov-ci:
+  upload-to-codecov:
     jobs:
       - codecov/upload
 
