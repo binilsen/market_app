@@ -20,6 +20,8 @@ jobs:
       - store_artifacts:
           path: coverage
   codecov-ci:
+    docker:
+      - image: cimg/base:stable
     steps:
       - codecov/upload
   deploy:
