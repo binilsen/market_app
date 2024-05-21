@@ -19,6 +19,9 @@ jobs:
           command: bundle exec rspec
       - store_artifacts:
           path: coverage
+  codecov-ci:
+    steps:
+      - codecov/upload
   deploy:
     docker:
       - image: cimg/base:stable
@@ -31,7 +34,7 @@ workflows:
   build-and-test:
     jobs:
       - test-ruby
-      - codecov/upload
+      - codecov-ci
       - deploy:
           filters:
             branches:
