@@ -36,7 +36,9 @@ workflows:
   build-and-test:
     jobs:
       - test-ruby
-      - codecov-ci
+      - codecov-ci:
+          requires:
+            - test-ruby
       - deploy:
           filters:
             branches:
