@@ -23,7 +23,8 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - codecov/upload
+      - codecov/upload:
+          file: /home/circleci/project/coverage/index.html
   deploy:
     docker:
       - image: cimg/base:stable
