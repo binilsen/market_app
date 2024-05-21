@@ -19,8 +19,6 @@ jobs:
           command: bundle exec rspec
       - store_artifacts:
           path: coverage
-      - codecov/upload:
-          file: /home/circleci/project/coverage/index.html
   deploy:
     docker:
       - image: cimg/base:stable
@@ -40,4 +38,6 @@ workflows:
                 - main
           requires:
             - test-ruby
+  codecov-ci:
+    - codecov/upload
 
