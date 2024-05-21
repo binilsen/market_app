@@ -25,6 +25,7 @@ jobs:
     steps:
       - codecov/upload:
           file: /home/circleci/project/coverage/index.html
+          commit_args: --slug binilsen/market_app
   deploy:
     docker:
       - image: cimg/base:stable
